@@ -1,0 +1,23 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+
+  "Description" : "ECS Repository for application.",
+
+  "Parameters" : {
+    "RepositoryName": {
+      "Description": "Repository name",
+      "Type": "String"
+    }
+  },
+
+  "Resources":{
+    "AppRepository":{
+      "Type":"AWS::ECR::Repository",
+      "Properties":{
+        "RepositoryName":{
+          "Ref":"RepositoryName"
+        }
+      }
+    }
+  }
+}
