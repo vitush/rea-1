@@ -2,6 +2,7 @@
     
 ### Idea: 
 Run the application in ECS container using CloudFormation for deployment.
+See `./documentation/network-diagram.png`
     
 This approach provides a unified scalable way to deploy stateless applications.
 Usage of dockers ensures that the result of deployment would be the same all the time.
