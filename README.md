@@ -48,12 +48,16 @@ See installation steps bellow.
 - Next packages must be installed locally to be able to deploy the application:
     - awscli 
     - git
-    - docker 
+    - docker (docker.io)
     - jq
 
+- AWSCli needs to be configured:
+  Use `aws configure` command.
+
 - Permissions:
-    CloudFormation stack require lot of different permissions to create 
-    different resources. Use Admin account.
+    - Make sure the curent useer have permissions to run docker (Is member of 'docker' group).
+    - CloudFormation stack require lot of different permissions to create 
+      different resources. Use Admin account in order to simplify installation.
 
 # Installation
     Let pretend we want to deploy application using name "simple-sinatra-app1"
@@ -77,7 +81,7 @@ Run `./install.sh -n simple-sinatra-app1 -a create-repo`
     ./install.sh -n simple-sinatra-app1 -a create-cluster
 
 ### 5 Get application URL (Load balancer URL):
-    Run `./install.sh -n simple-sinatra-app-1 -a info
+    Run `./install.sh -n simple-sinatra-app1 -a info
     
 ### Additional:
     # To install another stack using existed image

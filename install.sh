@@ -12,7 +12,7 @@ set -o pipefail
 set -o nounset
 
 # Default settings
-APP_URL_DEFAULT='git@github.com:rea-cruitment/simple-sinatra-app.git'
+APP_URL_DEFAULT='http://github.com/rea-cruitment/simple-sinatra-app.git'
 CLUSTER_CONFIG_FILE_DEFAULT='config.ini'
 
 ####################################################################
@@ -110,7 +110,7 @@ function upload_docker_container_image(){
     #
 
     # Login to repository
-    LOGIN_CMD=$(aws ecr get-login --no-include-email)
+    LOGIN_CMD=$(aws ecr get-login)
     eval "${LOGIN_CMD}"
 
     # Tag and upload image.

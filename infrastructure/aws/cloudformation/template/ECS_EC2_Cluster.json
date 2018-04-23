@@ -300,7 +300,7 @@
       "DependsOn":"ApplicationLoadBalancerListener",
       "Properties":{
         "Cluster":{"Ref":"ECSCluster"},
-        "DesiredCount":"1",
+        "DesiredCount": {"Ref":"DesiredCapacity"},
         "LoadBalancers":[
           {
             "ContainerName": {"Ref":"AppName"},
